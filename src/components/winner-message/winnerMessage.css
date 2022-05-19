@@ -1,0 +1,29 @@
+.box-winner {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  padding-top: 200px; 
+  left: 0;
+  top: 0;
+  width: 100vw; 
+  height: 89.5vh; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+.box-winner-text {
+  background-color: #d12d36;
+  margin: auto;
+  padding: 20px;
+  border: 2px solid black;
+  color: #ffff;
+  border-radius: 10px;
+  width: 60%;
+  text-align: center;
+  border-radius: 10px;
+}
+.box-winner-text p{
+  font-size: 1.5rem;
+  font-weight: 500;
+
+}

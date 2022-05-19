@@ -1,0 +1,35 @@
+.box-player {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 30%;
+}
+
+.box-player h1 {
+  font-size: 4rem;
+}
+
+.box-player .total-score {
+  font-size: 7rem;
+  color: #fe7400;
+}
+.box-player .current-score {
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+  height: 100px;
+  background-color: #fe7400;
+  align-items: center;
+  border-radius: 10px;
+
+  
+}
+.current-score h3 {
+  margin: 0;
+  padding: 0;
+}
+.current-score span {
+  font-size: 3rem;
+  margin-top: 13%;
+}
