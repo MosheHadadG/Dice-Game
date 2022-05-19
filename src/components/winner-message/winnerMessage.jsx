@@ -2,11 +2,7 @@ import React, { Component } from "react";
 import './winnerMessage.css'
 
 class WinnerMessage extends Component {
-  constructor(props) {
-    super(props)
-  }
-
-
+  
   render() {
     return (
       <div style={{display: this.props.winnerBoxDisplay}} className="box-winner">
