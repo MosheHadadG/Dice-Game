@@ -24,7 +24,6 @@ class GameBoard extends Component {
     pointsToWin: 100,
     die1: null,
     die2: null,
-    winner: false
   }
 
 
@@ -79,7 +78,7 @@ class GameBoard extends Component {
       player2Turn: false,
       winner: false,
       whoWon: null,
-      winnerBoxDisplay: null,
+      BoxWinnerDisplay: null,
       backgroundPlayer1: '#d12d36',
       backgroundPlayer2: null,
       player1Score: 0,
@@ -89,7 +88,6 @@ class GameBoard extends Component {
       pointsToWin: 100,
       die1: null,
       die2: null,
-      winner: false
     });
   }
 
@@ -101,10 +99,10 @@ class GameBoard extends Component {
       this.setState({winner: true, whoWon: 'Player 1', winnerBoxDisplay: 'block'})
     }
 
-    if(this.state.player1Score == this.state.pointsToWin) {
+    if(this.state.player1Score === this.state.pointsToWin) {
       this.setState({winner: true, whoWon: 'Player 1', winnerBoxDisplay: 'block'})
     }
-    else if(this.state.player2Score == this.state.pointsToWin) {
+    else if(this.state.player2Score === this.state.pointsToWin) {
       this.setState({winner: true, whoWon: 'Player 2', winnerBoxDisplay: 'block'})
     }
   }

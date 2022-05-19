@@ -2,10 +2,7 @@ import React, { Component } from "react";
 import './dice.css'
 
 class Dice extends Component {
-  constructor(props) {
-    super(props)
-  }
-
+  
   render() {
     if (this.props.die1 || this.props.die2) {
       return (
