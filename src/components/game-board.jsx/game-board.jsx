@@ -78,7 +78,7 @@ class GameBoard extends Component {
       player2Turn: false,
       winner: false,
       whoWon: null,
-      BoxWinnerDisplay: null,
+      winnerBoxDisplay: null,
       backgroundPlayer1: '#d12d36',
       backgroundPlayer2: null,
       player1Score: 0,
