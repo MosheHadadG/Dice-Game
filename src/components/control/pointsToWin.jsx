@@ -16,16 +16,26 @@ class PointsToWin extends Component {
 
 
   render() {
-    return (
-      <div>
-        <h1>Points To Win: {this.props.points}</h1>
-        <form className="pointsToWin" onSubmit={(e) => this.props.clickedSumbit(this.handleSubmit(e))}>
-          <input type="number" className="form__input" value={this.state.value} placeholder="Points To Win" onChange={this.handleChange} />
-          <input className="pointsSumbit" type="submit" value="Submit" />
-        </form>
-      </div>
+    if (!this.props.gameStart) {
+      return (
+        <div>
+          <h1>Points To Win: {this.props.points}</h1>
+          <form className="pointsToWin" onSubmit={(e) => this.props.clickedSumbit(this.handleSubmit(e))}>
+            <input type="number" className="form__input" value={this.state.value} placeholder="Points To Win" onChange={this.handleChange} />
+            <input className="pointsSumbit" type="submit" value="Submit" />
+          </form>
+        </div>
 
-    );
+      )
+    }
+    else {
+      return (
+        <div>
+          <h1>Points To Win: {this.props.points}</h1>
+        </div>
+      );
+    }
+
   }
 
 

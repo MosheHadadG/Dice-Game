@@ -13,6 +13,7 @@ class GameBoard extends Component {
   state = {
     player1Turn: true,
     player2Turn: false,
+    gameStart: false,
     winner: false,
     whoWon: null,
     winnerBoxDisplay: null,
@@ -28,7 +29,7 @@ class GameBoard extends Component {
   }
 
   updatePointsToWin = (points) => {
-    if(points > 0) {
+    if(points > 0 && !this.state.gameStart) {
       this.setState({pointsToWin: points})
     }
   }
@@ -61,7 +62,7 @@ class GameBoard extends Component {
   updateDiceState = (diceObj) => {
     diceObj = diceObj();
     const { die1, die2 } = diceObj;
-    this.setState({ die1: die1, die2: die2 });
+    this.setState({ die1: die1, die2: die2, gameStart: true });
     this.updateCurrentScore(die1, die2);
   }
 
@@ -82,6 +83,7 @@ class GameBoard extends Component {
     this.setState({
       player1Turn: true,
       player2Turn: false,
+      gameStart: false,
       winner: false,
       whoWon: null,
       winnerBoxDisplay: null,
@@ -140,6 +142,7 @@ class GameBoard extends Component {
        
         <div className="control-container">
         <PointsToWin
+        gameStart={this.state.gameStart}
          points={this.state.pointsToWin}
          clickedSumbit={this.updatePointsToWin}/>  
           <Dice
