@@ -1,0 +1,28 @@
+.pointsToWin {
+  display: flex;
+  gap: 1%;
+}
+.form__input {
+  font-size: 1.4rem;
+  padding: 1.5rem 2rem;
+  border-radius: 0.8rem;
+  width: 70%;
+  border: 2px solid #d12d36;
+}
+
+.form__input:focus {
+  box-shadow: 0 0 10px #d12d36;
+}
+
+.pointsSumbit {
+  width: 25%;
+  border-radius: 0.8rem;
+  background-color: #d12d36;
+  font-size: 1.5rem;
+  color: #ffff;
+  cursor: pointer;
+}
+
+.pointsSumbit:hover {
+  background-color: #b9272f;
+}

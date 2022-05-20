@@ -4,6 +4,7 @@ import Dice from "../dice/dice";
 import RollDice from "../control/RollDice";
 import Hold from "../control/hold";
 import WinnerMessage from "../winner-message/winnerMessage";
+import PointsToWin from "../control/pointsToWin";
 import './game-board.css'
 
 
@@ -26,6 +27,11 @@ class GameBoard extends Component {
     die2: null,
   }
 
+  updatePointsToWin = (points) => {
+    if(points > 0) {
+      this.setState({pointsToWin: points})
+    }
+  }
 
   updateCurrentScore = (die1, die2) => {
     let totalCurrentScore = die1 + die2;
@@ -131,8 +137,11 @@ class GameBoard extends Component {
           totalScore={this.state.player1Score}
           currentScore={this.state.player1CurrScore}
         />
-
+       
         <div className="control-container">
+        <PointsToWin
+         points={this.state.pointsToWin}
+         clickedSumbit={this.updatePointsToWin}/>  
           <Dice
             die1={this.state.die1}
             die2={this.state.die2}
@@ -145,7 +154,7 @@ class GameBoard extends Component {
               player2Turn={this.state.player2Turn}
               clickedHold={this.updateTurnState}
             />
-            <button onClick={this.restGame}>New Game</button>
+           <button onClick={this.restGame}>New Game</button>
           </div>
         </div>
 
