@@ -68,6 +68,8 @@ class GameBoard extends Component {
 
   updateTurnState = (turnObj) => {
     const { player1Turn, player2Turn } = turnObj
+    if (!player1Turn && !this.state.player1CurrScore) return;
+    else if (!player2Turn && !this.state.player2CurrScore) return;
     this.setState({ player1Turn: player1Turn, player2Turn: player2Turn })
     this.updateTotalScore();
     this.changeBackgroundPlayer();
@@ -117,8 +119,7 @@ class GameBoard extends Component {
 
   componentDidUpdate = () => {
     if(this.state.winner) {
-      console.log(this.state)
-
+      console.log(this.state.winner);
     }
     else{
       this.checkWhoWon()
